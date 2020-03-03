@@ -365,7 +365,7 @@ $('#listen-btn').on('click', function(e) {
 
   var utterThis = new SpeechSynthesisUtterance(test[compteur]);
   pitch=rate.value;
-  utterThis.voice = voices[9]
+  utterThis.voice = voices[3]
   utterThis.rate = rate;
   synth.speak(utterThis);
 });
