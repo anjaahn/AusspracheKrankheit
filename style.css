@@ -87,13 +87,14 @@ h2 {
 
 #start-btn {
 	border-radius: 50%;
+	float: right;
 	
 	}
 
 
 #listen-btn {
 	border-radius: 50%;
-	float: right;
+	
 }
 
 
