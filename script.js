@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 // tableau dynamique des phrases
-var lesPhrases = ['Das ist ein Test', 'Ich bin genervt', 'Ist das ein klasse Projekt'];
+var lesPhrases = ['Die Medizin', 'Ich bin genervt', 'Ist das ein klasse Projekt'];
 var test = lesPhrases;
 
 //tableau dynamique des phrases correctes
@@ -121,7 +121,7 @@ recognition.onresult = function(event) {
 
 
 recognition.onstart = function() { 
-  instructions.text('Le détéction de voix est activée.');
+  instructions.text('Die Spracherkennenung ist aktiviert...');
   instructions2.text(''); 
  instructions3.text(''); 
   ResultatAudio='';
@@ -130,23 +130,23 @@ recognition.onstart = function() {
 
 
 recognition.onspeechend = function() {
-  instructions.text('En pause');
+  instructions.text('Pause...');
 }
 
 recognition.onspeechstart = function() {
-  instructions.text('En cours d\'enregistrement');
+  instructions.text('Nimmt gerade auf...');
 }
 
 recognition.onerror = function(event) {
   if(event.error == 'no-speech') {
-    instructions.text('Essaye encore.');  
+    instructions.text('Probier es nochmal!');  
   }
 }
 
 
 
 recognition.onend = function() { 
-  instructions.text('Le détéction de voix est désactivée.');
+  instructions.text('Spracherkennung ist deaktiviert');
   Content=Content.ucFirst();
   ResultatAudio = Content;
     for(i=0; i<=Phrase.length;i++)
@@ -156,12 +156,12 @@ recognition.onend = function() {
     }
 
   if (Content== ''){
-    instructions.text('Le détéction de voix est désactivée.');
+    instructions.text('Die Spracherkennung ist aktiviert');
     ResultatAudio=''
   }
   else if (compteurPasOk >= 3) {
 
-   instructions.text('La phrase n\'a pas été bien reconnue. Réessaye !');
+   instructions.text('Der Satz wurde nicht erkannt. Probier es nochmal');
    instructions2.text(''); 
       ResultatTest= 'Pas OK';
 
@@ -200,7 +200,7 @@ recognition.onend = function() {
   // Test si la reponse est correct, // on compare le résultat à la phrase du tableau
   // la c'est oui
   if (compteurPasOk < 3 && compteurPasOk >0) {
-    instructions2.text('Non, recommence ! Tu as fait ' +compteurPasOk + ' fautes.');
+    instructions2.text('Probier es nochmal. DU hast ' +compteurPasOk + ' Fehler');
     ResultatTest= 'Pas OK';
 
       incorrects= test.slice(compteur, compteur+1);
@@ -241,7 +241,7 @@ recognition.onend = function() {
       corrects= p.innerText ;
       corectP.text(corrects);
       }
-    instructions2.text(' Bravo !'); 
+    instructions2.text(' Bravo'); 
     corrects=corect[compteur];
     compteur = compteur + 1; 
     Phrase= test[compteur];
@@ -260,7 +260,7 @@ recognition.onend = function() {
                                 toggleVisibility(change);
                               }
 
-  instructions.text('Tu as validé, du premier coup ' + corect.length + ' des ' + test.length +' prononciations! Continuons...');
+  instructions.text('Sehr gut! Du hast ' + corect.length + ' von ' + test.length +' richtig. Drück wieder auf Hören! ');
   enCours.text(ResultatAudio);
   ResultatAudio='';
 
@@ -335,7 +335,7 @@ if(compteur + 1< test.length) {
   compteur= compteur + 1;
   Phrase= test[compteur];
   NextCompteur = compteur +1;
-  if (compteur<test.length) instructions2.text('Ok passons à la phrase suivante (' + NextCompteur +').');
+  if (compteur<test.length) instructions2.text('Machen wir mit dem nächsten Satz weiter (' + NextCompteur +').');
   TestTextBox.val(Phrase);
   progression.text(compteur + ' / ' + test.length);
 }
@@ -350,7 +350,7 @@ else {
     compteur++;
   }
 
-  instructions2.text('--------- FIN, tu as prononcer toutes les phrases disponibles ('+test.length+') . Bravo ! ---------');
+  instructions2.text('--------- DU HAST ALLE SÄTZE AUSGESPROCHEN ('+test.length+') . Sehr gut!  ---------');
   change=document.getElementById('change-btn');
   toggleVisibility(change);
   Phrase= '';
