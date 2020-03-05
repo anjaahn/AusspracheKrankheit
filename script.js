@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 // tableau dynamique des phrases
-var lesPhrases = ['Die Medizin', 'Wie kann ich helfen', 'Ich habe seit zwei Tagen eine Erkältung', 'Ich habe Bauchschmerzen', 'Der Arzt', 'Gute Besserung', 'Auf Wiederhören', 'Die Tabletten', 'Ein Termin', 'Die Krankenkassenkarte', 'Das geht' ];
+var lesPhrases = ['Die Medizin', 'Wie kann ich helfen', 'Ich habe Bauchschmerzen'; 'Ich bin seit zwei Tagen krank', 'Ich habe eine Erkältung', 'Der Arzt', 'Gute Besserung', 'Auf Wiederhören', 'Die Tabletten', 'Ein Termin', 'Die Krankenkassenkarte', 'Die Apotheke'];
 var test = lesPhrases;
 
 //tableau dynamique des phrases correctes
