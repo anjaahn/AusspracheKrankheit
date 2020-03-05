@@ -335,7 +335,7 @@ if(compteur + 1< test.length) {
   compteur= compteur + 1;
   Phrase= test[compteur];
   NextCompteur = compteur +1;
-  if (compteur<test.length) instructions2.text('Machen wir mit dem nächsten Satz weiter (' + NextCompteur +').');
+  if (compteur<test.length) instructions2.text('ok. Weiter mit Satz (' + NextCompteur +').');
   TestTextBox.val(Phrase);
   progression.text(compteur + ' / ' + test.length);
 }
