@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 // tableau dynamique des phrases
-var lesPhrases = ['Die Medizin', 'Ich bin genervt', 'Ist das ein klasse Projekt'];
+var lesPhrases = ['Die Medizin', 'Wie kann ich helfen', 'Ich habe seit zwei Tagen eine Erklältung', 'Gute Besserung', 'Auf Wiederhören', 'Die Tabletten', 'Ein Termin', 'Die Krankenkassenkarte', 'Das geht' ];
 var test = lesPhrases;
 
 //tableau dynamique des phrases correctes
