@@ -213,7 +213,7 @@ recognition.onend = function() {
       incorectP.text(p2.innerText);
       }
 
-      if(TestTable(incorect,Phrase) == 0) instructions2.text('Non, recommence encore une fois ou passe à la prononciation suivante!');
+      if(TestTable(incorect,Phrase) == 0) instructions2.text('Probier es nochmal');
 
       if (incorect.length == 0 )
       {
