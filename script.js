@@ -255,7 +255,7 @@ recognition.onend = function() {
     // futur bar de progression
    progression.text(compteur + ' / ' + test.length);
       // test si on arrive à lq fin
-    if(compteur===test.length){ instructions2.text('Très bien, tu as prononcer toutes les phrases (' + test.length +')! Bravo !');
+    if(compteur===test.length){ instructions2.text('Wunderbar! Alles ausgesprochen!');
                                 change=document.getElementById('change-btn');
                                 toggleVisibility(change);
                               }
