@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 // tableau dynamique des phrases
-var lesPhrases = ['Die Medizin', 'Wie kann ich helfen', 'Ich habe seit zwei Tagen eine Erklältung', 'Gute Besserung', 'Auf Wiederhören', 'Die Tabletten', 'Ein Termin', 'Die Krankenkassenkarte', 'Das geht' ];
+var lesPhrases = ['Die Medizin', 'Wie kann ich helfen', 'Ich habe seit zwei Tagen eine Erkältung', 'Ich habe Bauchschmerzen', 'Der Arzt', 'Gute Besserung', 'Auf Wiederhören', 'Die Tabletten', 'Ein Termin', 'Die Krankenkassenkarte', 'Das geht' ];
 var test = lesPhrases;
 
 //tableau dynamique des phrases correctes
@@ -255,7 +255,7 @@ recognition.onend = function() {
     // futur bar de progression
    progression.text(compteur + ' / ' + test.length);
       // test si on arrive à lq fin
-    if(compteur===test.length){ instructions2.text('Wunderbar! Alles ausgesprochen!');
+    if(compteur===test.length){ instructions2.text('Genial! Du bist fertig.');
                                 change=document.getElementById('change-btn');
                                 toggleVisibility(change);
                               }
