@@ -67,7 +67,7 @@ function toggleVisibility(elmt)
 }
 
 function populateVoiceList() {
-  voices = synth.getVoices();
+  voices = synth.getVoices(3);
 
 }
 
