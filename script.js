@@ -3,7 +3,7 @@ var SpeechRecognition = window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
 // tableau dynamique des phrases
-var lesPhrases = ['Wie kann ich helfen', 'Ich habe Bauchschmerzen', 'Ich bin seit zwei Tagen krank', 'Ich habe eine Erkältung', 'Der Arzt', 'Gute Besserung', 'Auf Wiederhören', 'Die Tablette', 'Ein Termin', 'Apotheke', 'Die Krankenkassenkarte'];
+var lesPhrases = ['Ich', 'Möchte', 'Mittwoch', 'Bauch', 'Krankenversicherung', 'Gleichfalls', 'Nacht', 'Mich', 'Echt'];
 var test = lesPhrases;
 
 //tableau dynamique des phrases correctes
@@ -139,7 +139,7 @@ recognition.onspeechstart = function() {
 
 recognition.onerror = function(event) {
   if(event.error == 'no-speech') {
-    instructions.text('Probier es nochmal!');  
+    instructions.text('');  
   }
 }
 
@@ -175,7 +175,7 @@ recognition.onend = function() {
       incorectP.text(p2.innerText);
       }
 
-      if(TestTable(incorect,Phrase) == 0) instructions2.text('Recommence encore une fois ou passe à la prononciation suivante!');
+      if(TestTable(incorect,Phrase) == 0) instructions2.text('Leider nein.');
 
       if (incorect.length == 0 )
       {
@@ -260,7 +260,7 @@ recognition.onend = function() {
                                 toggleVisibility(change);
                               }
 
-  instructions.text('Sehr gut! Du hast ' + corect.length + ' von ' + test.length +' richtig. Drück wieder auf Hören! ');
+  instructions.text('Sehr gut! Du hast ' + compteur + ' von ' + test.length +' richtig. Drück wieder auf Hören! ');
   enCours.text(ResultatAudio);
   ResultatAudio='';
 
